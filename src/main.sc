@@ -20,8 +20,8 @@ theme: /
             
         state: RemeberCity
             script:
-                $client.city = $request.query
-                $session.cart = []
+                $client.city = $request.query;
+                $session.cart = [];
             go!: /Pizza/ChoosePizza
             
         state: ClickButtons
