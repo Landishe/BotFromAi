@@ -31,7 +31,7 @@ theme: /
             for (var id = 1; id < Object.keys(pizza).lenght + 1; id++) {
                 if ($session.pizza_name == pizza[id].value.title) {
                     var variations = pizza[id].value.variations;
-                    for(var i = 0; i < variations.lenght; i++){
+                    for (var i = 0; i < variations.lenght; i++) {
                         var button_name = variations[i].name + " за " + variations[i].price + " руб. " 
                         $reactions.inlineButtons({text: button_name, callback_data: variations[i].id })
                     }
