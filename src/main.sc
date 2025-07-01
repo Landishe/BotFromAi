@@ -5,10 +5,10 @@ theme: /
     state: Start
         q!: $regex</start>
         script:
-            $context.session = {}
-            $context.client = {}
-            $context.temp = {}
-            $context.respons = {}
+            $context.session = {};
+            $context.client = {};
+            $context.temp = {};
+            $context.respons = {};
         a: Привет! Я электронный помощник. Помогу вам заказать пиццу!
         go!: /ChooseCity
         
