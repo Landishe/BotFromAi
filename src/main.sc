@@ -22,7 +22,7 @@ theme: /
             script:
                 $client.city = $request.query
                 $session.cart = []
-            go!: /ChoosePizza
+            go!: /Pizza/ChoosePizza
             
         state: ClickButtons
             q: *
