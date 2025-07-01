@@ -39,7 +39,7 @@ theme: /
             }
         a: Для возврата в меню выбора пиццы, нажмите "Меню"
         buttons:
-            "Меню" -> /ChoosePizza
+            "Меню" ->/ChoosePizza
 
         state: ClickButtons
             q: * 
