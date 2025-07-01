@@ -18,7 +18,7 @@ theme: /
     state: GetName
         script:
             $session.pizza_name = $require.query
-            go!: /ChooseVariant
+        go!: /ChooseVariant
 
     state: ClickButton
         q: *
