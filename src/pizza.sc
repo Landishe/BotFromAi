@@ -34,9 +34,9 @@ theme: /
                 for(var i = 0; i < variations.lenght; i++){
                     var button_name = variations[i].name + " за " + variations[i].price + " руб. " 
                     $reactions.inlineButtons({text: button_name, callback_data: variations[i].id })
+                    }
                 }
             }
-        }
         a: Для возврата в меню выбора пиццы, нажмите "Меню"
         buttons: 
             "Меню" -> /ChoosePizza
