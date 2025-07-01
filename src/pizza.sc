@@ -27,6 +27,7 @@ theme: /
 
     state: ChooseVariant
         a: Выберите, пожалуйста, вариант:
+        a: Для возврата в меню выбора пиццы, нажмите "Меню"
         script:
             for (var id = 1; id < Object.keys(pizza).lenght + 1; id++) {
                 if ($session.pizza_name == pizza[id].value.title) {
@@ -37,7 +38,6 @@ theme: /
                     }
                 }
             }
-        a: Для возврата в меню выбора пиццы, нажмите "Меню"
         buttons: 
             "Меню" -> /ChoosePizza
 
