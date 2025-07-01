@@ -5,11 +5,11 @@ require: pizza.csv
 theme: /
 
     state: ChoosePizza
-        a: Какую пиццу заказываете?
+        a: Какую пиццу будем заказывать сегодня?
         script:
-            for (var id = 1; id < Object.keys(pizza).lenght + 1; id++) {
+            for (var id = 1; id < Object.keys(pizza).length + 1; id++) {
                 var regions = pizza[id].value.region;
-                if (_.contains(regions, $client.city)){
+                if (_.contains(regions, $client.city)) {
                     var button_name = pizza[id].value.title;
                     $reactions.buttons({text: button_name, transition: 'GetName'})
                 }
