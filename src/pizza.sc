@@ -1,6 +1,6 @@
 require: pizza.csv
-    name: pizza
-    var: pizza
+    name = pizza
+    var = pizza
 
 theme: /
 
