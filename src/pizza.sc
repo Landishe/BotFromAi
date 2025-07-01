@@ -15,15 +15,15 @@ theme: /
                 }
             }
 
-    state: GetName
-        script:
-            $session.pizza_name = $require.query
-        go!: /ChooseVariant
+        state: GetName
+            script:
+                $session.pizza_name = $require.query
+            go!: /ChooseVariant
 
-    state: ClickButton
-        q: *
-        a: Нажмите, пожалуйста, кнопку.
-        go!: ..
+        state: ClickButton
+            q: *
+            a: Нажмите, пожалуйста, кнопку.
+            go!: ..
 
     state: ChooseVariant
         a: Выберите, пожалуйста, вариант:
@@ -41,10 +41,10 @@ theme: /
         buttons: 
             "Меню" -> /ChoosePizza
 
-    state: ClickButtons
-        q: * 
-        a: Нажмите, пожалуйста, кнопку.
-        go!: ..
+        state: ClickButtons
+            q: * 
+            a: Нажмите, пожалуйста, кнопку.
+            go!: ..
 
     state: GetVariant
         event: telegramCallBackQuery
@@ -59,22 +59,22 @@ theme: /
             "2" -> ./GetQuantity
             "3" -> ./GetQuantity
 
-    state: ClickButtons
-        q: *
-        a: Нажмите, пожалуйста, кнопку.
-        go!: ..
+        state: ClickButtons
+            q: *
+            a: Нажмите, пожалуйста, кнопку.
+            go!: ..
 
-    state: GetQuantity
-        script: 
-            $session.quantity - parseInt($request.query)
-            $session.cart.push({name: $session.pizza_name, id: $session.pizza_id, quantity: $session.quantity})
-        a: Вы хотели выбрать еще что-то?
-        buttons: 
-            "Меню" -> /ChoosePizza
-        buttons:
-            "Офромить заказ" -> /Cart
+        state: GetQuantity
+            script: 
+                $session.quantity - parseInt($request.query)
+                $session.cart.push({name: $session.pizza_name, id: $session.pizza_id, quantity: $session.quantity})
+            a: Вы хотели выбрать еще что-то?
+            buttons: 
+                "Меню" -> /ChoosePizza
+            buttons:
+                "Офромить заказ" -> /Cart
 
-    state: CliskButtons
-        q: *
-        a: Нажмите, пожалуйста, кнопку.
-        go!: ..
+        state: CliskButtons
+            q: *
+            a: Нажмите, пожалуйста, кнопку.
+            go!: ..
