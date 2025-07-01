@@ -18,16 +18,16 @@ theme: /
             "Санкт-Петербург" -> ./RememberCity
             "Москва" -> ./RememberCity
             
-    state: RemeberCity
-        script:
-            $client.city = $request.query
-            $session.cart = []
-        go!:/ChoosePizza
-        
-    state: ClickButtons
-        q: *
-        a: Нажмите, пожалуйста, кнопку
-        go!: ..
+        state: RemeberCity
+            script:
+                $client.city = $request.query
+                $session.cart = []
+            go!:/ChoosePizza
+            
+        state: ClickButtons
+            q: *
+            a: Нажмите, пожалуйста, кнопку
+            go!: ..
         
     state: CatchAll || noContext=true
         event!: noMatch
