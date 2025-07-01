@@ -29,7 +29,7 @@ theme: /
         a: Нажмите, пожалуйста, кнопку
         go!: ..
         
-    state: CatchAll || noContext = true
+    state: CatchAll || noContext=true
         event!: noMatch
         a: Я вас не понимаю
-     
+        go!: /Start
