@@ -18,7 +18,7 @@ theme: /
             "Санкт-Петербург" -> ./RememberCity
             "Москва" -> ./RememberCity
             
-        state: RemeberCity
+        state: RememberCity
             script:
                 $client.city = $request.query;
                 $session.cart = [];
