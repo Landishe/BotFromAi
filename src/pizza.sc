@@ -2,7 +2,7 @@ require: pizza.csv
     name = pizza
     var = pizza
 
-theme: /Pizza
+theme: 
 
     state: ChoosePizza
         a: Какую пиццу заказываете?
