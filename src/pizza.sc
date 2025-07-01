@@ -17,7 +17,7 @@ theme: /
 
         state: GetName
             script:
-                $session.pizza_name = $require.query
+                $session.pizza_name = $request.query;
             go!: /ChooseVariant
 
         state: ClickButton
@@ -30,7 +30,7 @@ theme: /
         script:
             for(var id = 1; id < Object.keys(pizza).lenght + 1; id++) {
             if($session.pizza_name == pizza[id].value.title) {
-                var variations = pizza[id].value.variations
+                var variations = pizza[id].value.variations;
                 for ( var i = 0; i < variations.lenght; i++) {
                     var button_name = variations[i].name + "за" + variations[i].price + "руб." 
                     $reactions.inlineButtons({text: button_name, callback_data: variations[i].id})
@@ -49,7 +49,7 @@ theme: /
     state: GetVariant
         event: telegramCallBackQuery
         script:
-            $session.pizza_id = parseInt($request.query)
+            $session.pizza_id = parseInt($request.query);
         go!: /ChooseQuantity
 
     state: ChooseQuantity
@@ -66,8 +66,8 @@ theme: /
 
         state: GetQuantity
             script: 
-                $session.quantity - parseInt($request.query)
-                $session.cart.push({name: $session.pizza_name, id: $session.pizza_id, quantity: $session.quantity})
+                $session.quantity - parseInt($request.query);
+                $session.cart.push({name: $session.pizza_name, id: $session.pizza_id, quantity: $session.quantity});
             a: Вы хотели выбрать еще что-то?
             buttons: 
                 "Меню" -> /ChoosePizza
