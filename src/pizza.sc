@@ -47,7 +47,7 @@ theme: /
             go!: ..
 
     state: GetVariant
-        event: telegramCallBackQuery
+        event: telegramCallbackQuery
         script:
             $session.pizza_id = parseInt($request.query);
         go!: /ChooseQuantity
