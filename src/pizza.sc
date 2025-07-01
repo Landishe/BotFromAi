@@ -52,7 +52,7 @@ theme: /
             $session.pizza_id = parseInt($request.query);
         go!: /ChooseQuantity
 
-    state: ChooseQuantity || modal=true
+    state: ChooseQuantity
         a: Выберите, пожалуйста, количество:
         buttons: 
             "1" -> ./GetQuantity
