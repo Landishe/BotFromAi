@@ -16,10 +16,10 @@ theme: /
                             return variation_id === current.position_id;
                         });
 
-                        n++
+                    n++
 
-                        if(!variation) {
-                            $reactions.answer("Что-то пошло не так, вариант не найден для id" + current_position.id);
+                    if(!variation) {
+                        $reactions.answer("Что-то пошло не так, вариант не найден для id" + current_position.id);
                         } else {
                             $reactions.answer(n + ". " + current_position.name + "," + variation.name + "\nЦена: " + variaton.price + "\nКолличество: " + current.position.quantity);
 
