@@ -6,7 +6,7 @@ function deleteFromCart(name){
             $session.cart.splice(i, 1);
         }
     }
-    log('!!!! CART: ' + JSON.stringify($session.cart));
+    log('!!!!!! CART: ' + JSON.stringify($session.cart));
 }
 
 function getTotalSum(){
@@ -28,12 +28,12 @@ function getTotalSum(){
     return totalSum;
 }
 
-function editText(messageId, Text){
+function editText(messageId, text) {
     var $response = $jsapi.context().response;
     var reply = {
         type: "raw",
         body: {
-            text: Text,
+            text: text,
             message_id: messageId,
             reply_markup: {
                 "resize_keyboard": false,
@@ -41,6 +41,7 @@ function editText(messageId, Text){
         },
         method: "editMessageText"
     };
+
     $response.replies = $response.replies || [];
     $response.replies.push(reply);
 }
