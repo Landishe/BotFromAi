@@ -12,7 +12,7 @@ theme: /
                 var current_position = $session.cart[i];
                 for(var id = 1; id < Object.keys(pizza).length + 1; id++){
                     if (current_position.name == pizza[id].value.title){
-                        var variation = ._find(pizza[id].value.variation, function(variation){
+                        var variation = ._find(pizza[id].value.variations, function(variation){
                             return variation_id === current.position_id;
                         });
 
