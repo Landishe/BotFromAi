@@ -24,7 +24,7 @@ function getTotalSum(){
             }
         }
     }
-    log("!!!!! totalSum = " + totalSum);
+    log("!!!!!!!!!!!! totalSum = " + totalSum);
     return totalSum;
 }
 
