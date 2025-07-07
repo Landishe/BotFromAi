@@ -1,5 +1,5 @@
 function deleteFromCart(name){
-    var $session = $jaicp.context().session;
+    var $session = $jsapi.context().session;
     for (var i = 0; i < $session.cart.length; i++){
         var current_position = $session.cart[i];
         if(current_position.name === name){
