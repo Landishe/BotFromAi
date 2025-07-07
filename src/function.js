@@ -12,7 +12,7 @@ function deleteFromCart(name){
 
 function getTotalSum(){
     var totalSum = 0;
-    var $session = $jaicp.context().session;
+    var $session = $jsapi.context().session;
 
     for(var i = 0; i < $session.cart.length; i++){
         var current_position = $session.cart[i];
