@@ -1,12 +1,12 @@
 function deleteFromCart(name){
     var $session = $jaicp.context().session;
-    for (var i = 0; i < $session.cart.lenght; i++){
+    for (var i = 0; i < $session.cart.length; i++){
         var current_position = $session.cart[i];
         if(current_position.name === name){
             $session.cart.splice(i, 1);
         }
     }
-    log(`!!!! CART: ` + JSON.stringify($session.cart));
+    log('!!!! CART: ' + JSON.stringify($session.cart));
 
 }
 
@@ -14,9 +14,9 @@ function getTotalSum(){
     var totalSum = 0;
     var $session = $jaicp.context().session;
 
-    for(var i = 0; i < $session.cart.lenght; i++){
+    for(var i = 0; i < $session.cart.length; i++){
         var current_position = $session.cart[i];
-        for(var id = 1; id < Object.keys(pizza).lenght + 1; id++){
+        for(var id = 1; id < Object.keys(pizza).length + 1; id++){
             if(current_position.name === pizza[id].value.title){
                 var variation = _.find(pizza[id].value.variation, function(variation){
                     return variation.id === current_position.id
