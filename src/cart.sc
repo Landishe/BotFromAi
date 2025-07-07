@@ -16,12 +16,12 @@ theme: /
                             return variation.id === current_position.id;
                         });
 
-                    n++;
+                        n++;
 
-                    if (!variation) {
-                        $reactions.answer("Что-то пошло не так, вариант не найден для id " + current_position.id);
+                        if (!variation) {
+                            $reactions.answer("Что-то пошло не так, вариант не найден для id " + current_position.id);
                         } else {
-                            $reactions.answer(n + ". " + current_position.name + ", " + variation.name + "\nЦена: " + variation.price + "\nКолличество: " + current.position.quantity);
+                            $reactions.answer(n + ". " + current_position.name + ", " + variation.name + "\nЦена: " + variation.price + "\nКоличество: " + current_position.quantity);
 
                             $reactions.inlineButtons({text: "Удалить", callback_data: current_position.name});
 
@@ -32,10 +32,10 @@ theme: /
             }
             $session.messageId = $request.rawRequest.message.message_id + n + 2;
 
-        a: Общая стоимость заказа: {{$temp.totalSum}} рублей.
+        a: Общая сумма заказа: {{ $temp.totalSum }} рублей.
         a: Если все верно, отправьте свой номер телефона, и наш менеджер с вами свяжется.
         buttons:
-            {text: "отправить номер телефона", request_contact: true}
+            {text: "Отправить номер телефона", request_contact: true}
             "Меню" -> /ChoosePizza
 
         state: Edit
@@ -45,10 +45,10 @@ theme: /
                 deleteFromCart(name);
                 var message_id = $request.rawRequest.callback_query.message.message_id;
 
-                editText(message_id, "Удален");
+                editText(message_id, 'Удален');
                 editText($session.messageId, 'Общая сумма заказа: ' + getTotalSum() + ' руб.');
             if: $session.cart.length == 0
-                a: Вы отчистили корзину
+                a: Вы очистили корзину
                 go!: /ChoosePizza
 
             state: ClickButtons
