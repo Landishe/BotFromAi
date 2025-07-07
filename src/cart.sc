@@ -16,12 +16,12 @@ theme: /
                             return variation.id === current_position.id;
                         });
 
-                    n++
+                    n++;
 
-                    if(!variation) {
-                        $reactions.answer("Что-то пошло не так, вариант не найден для id" + current_position.id);
+                    if (!variation) {
+                        $reactions.answer("Что-то пошло не так, вариант не найден для id " + current_position.id);
                         } else {
-                            $reactions.answer(n + ". " + current_position.name + "," + variation.name + "\nЦена: " + variaton.price + "\nКолличество: " + current.position.quantity);
+                            $reactions.answer(n + ". " + current_position.name + ", " + variation.name + "\nЦена: " + variation.price + "\nКолличество: " + current.position.quantity);
 
                             $reactions.inlineButtons({text: "Удалить", callback_data: current_position.name});
 
@@ -42,11 +42,11 @@ theme: /
             event: telegramCallbackQuery
             script:
                 var name = $request.rawRequest.callback_query.data;
-                deleteFromChat(name);
+                deleteFromCart(name);
                 var message_id = $request.rawRequest.callback_query.message.message_id;
 
                 editText(message_id, "Удален");
-                editText($session.messageId, 'Общая сумма заказа: ' + getTotalSum() + 'руб.');
+                editText($session.messageId, 'Общая сумма заказа: ' + getTotalSum() + ' руб.');
             if: $session.cart.length == 0
                 a: Вы отчистили корзину
                 go!: /ChoosePizza
