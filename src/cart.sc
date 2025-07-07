@@ -13,7 +13,7 @@ theme: /
                 for(var id = 1; id < Object.keys(pizza).length + 1; id++){
                     if (current_position.name == pizza[id].value.title){
                         var variation = _.find(pizza[id].value.variations, function(variation){
-                            return variation_id === current.position_id;
+                            return variation.id === current_position.id;
                         });
 
                     n++
