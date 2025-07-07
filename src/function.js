@@ -17,8 +17,8 @@ function getTotalSum(){
     for(var i = 0; i < $session.cart.length; i++){
         var current_position = $session.cart[i];
         for(var id = 1; id < Object.keys(pizza).length + 1; id++){
-            if(current_position.name === pizza[id].value.title){
-                var variation = _.find(pizza[id].value.variation, function(variation){
+            if (current_position.name === pizza[id].value.title){
+                var variation = _.find(pizza[id].value.variations, function(variation){
                     return variation.id === current_position.id
                 });
                 totalSum +=variation.price * current_position.quantity;
@@ -30,7 +30,7 @@ function getTotalSum(){
 }
 
 function editText(messageId, text){
-    var $response = $jaicp.context().response;
+    var $response = $jsapi.context().response;
     var reply = {
         type: "raw",
         body: {
