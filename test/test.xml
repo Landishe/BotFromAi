@@ -70,7 +70,7 @@
         <a start="/ChooseVariant"/>
         <request>{type:"query", event:"telegramCallbackQuery", query:"1", rawRequest: {callback_query:{data: "1"}}}</request>
         <a start="/ChooseQuantity"/>
-        <q>2</2>
+        <q>2</q>
         <a state="/ChooseQuantity/GetQuantity/"/>
         <q>Меню</q>
         <a state="/ChoosePizza"/>
