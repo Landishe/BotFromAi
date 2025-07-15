@@ -20,7 +20,7 @@ theme: /
                 $session.pizza_name = $request.query;
             go!: /ChooseVariant
 
-        state: ClickButton
+        state: ClickButtons
             q: *
             a: Нажмите, пожалуйста, кнопку.
             go!: ..
@@ -42,9 +42,9 @@ theme: /
             "Меню" -> /ChoosePizza
 
         state: ClickButtons
-            q: * 
-            a: Нажмите, пожалуйста, кнопку.
-            go!: ..
+                q: *
+                a: Нажмите, пожалуйста, кнопку.
+                go!: ..
 
     state: GetVariant
         event: telegramCallbackQuery
@@ -54,27 +54,27 @@ theme: /
 
     state: ChooseQuantity
         a: Выберите, пожалуйста, количество:
-        buttons: 
+        buttons:
             "1" -> ./GetQuantity
             "2" -> ./GetQuantity
             "3" -> ./GetQuantity
 
         state: ClickButtons
-            q: *
-            a: Нажмите, пожалуйста, кнопку.
-            go!: ..
+                q: *
+                a: Нажмите, пожалуйста, кнопку.
+                go!: ..
 
         state: GetQuantity
-            script: 
-                $session.quantity - parseInt($request.query);
+            script:
+                $session.quantity = parseInt($request.query);
                 $session.cart.push({name: $session.pizza_name, id: $session.pizza_id, quantity: $session.quantity});
-            a: Вы хотели выбрать еще что-то?
-            buttons: 
+            a: Хотите ли выбрать что-нибудь еще, или перейдем к оформлению заказа?
+            buttons:
                 "Меню" -> /ChoosePizza
             buttons:
-                "Офромить заказ" -> /Cart
+                "Оформить заказ" -> /Cart
 
-        state: CliskButtons
-            q: *
-            a: Нажмите, пожалуйста, кнопку.
-            go!: ..
+            state: ClickButtons
+                q: *
+                a: Нажмите, пожалуйста, кнопку.
+                go!: ..
