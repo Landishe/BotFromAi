@@ -30,7 +30,7 @@
         <a state="/ChooseCity"/>
         <q>Меню</q>
         <a state="ChoosePizza"/>
-    </test-case> 
+    </test-case>
 
     <test-case id="WholeScript">
         <q>start</q>
