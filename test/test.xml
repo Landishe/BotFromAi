@@ -1,7 +1,7 @@
 <test>
 
      <test-case id="ChooseCity">
-        <q>/start</q>
+        <q>/Start</q>
         <responseData field="replies[1].buttons">[{text:"Санкт-Петербург",transition:"/ChooseCity/RememberCity"},{text:"Москва",transition:"/ChooseCity/RememberCity"}]</responseData>
         <a state="/ChooseCity"/>
         <q>Спб</q>
@@ -10,7 +10,7 @@
     </test-case>
 
     <test-case id="CatchAll">
-        <q>/start</q>
+        <q>/Start</q>
         <a state="/ChooseCity"/>
         <q>Санкт-Петербург</q>
         <a state="/ChoosePizza"/>
@@ -19,7 +19,7 @@
     </test-case>
 
     <test-case  id="ReturnToMenu">
-        <q>/start</q>
+        <q>/Start</q>
         <a state="/ChooseCity"/>
         <q>Санкт-Петербург</q>
         <a state="/ChoosePizza"/>
@@ -33,7 +33,7 @@
     </test-case>
 
     <test-case id="WholeScript">
-        <q>/start</q>
+        <q>/Start</q>
         <a state="/ChooseCity"/>
         <q>Санкт-Петербург</q>
         <a state="/ChoosePizza"/>
@@ -62,7 +62,7 @@
     </test-case>
 
     <test-case id="ChooseSomePizzas">
-        <q>/start</q>
+        <q>/Start</q>
         <a state="/ChooseCity"/>
         <q>Санкт-Петербург</q>
         <a state="/ChoosePizza"/>
@@ -88,7 +88,7 @@
     </test-case>
 
     <test-case id="EditCart">
-        <q>/start</q>
+        <q>/Start</q>
         <a state="/ChooseCity"/>
         <q>Санкт-Петербург</q>
         <a state="/ChoosePizza"/>
