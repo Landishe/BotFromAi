@@ -57,7 +57,7 @@
         <request>{query:"Оформить заказ",rawRequest:{message:{message_id:1}}}</request>
         <a state="Cart"/>
         <responseData field="replies[2].buttons"> [{ text:"Удалить",callback_data:"Маргарита" }] </responseData>
-        <request>{type:"query",event:"telegramSendContact",rawRequest:{message::{message_id:1, contact: {phone_number:"+79995649530"}}}}
+        <request>{type:"query",event:"telegramSendContact",rawRequest:{message::{message_id:1, contact: {phone_number:"+79995649530"}}}}</request>
         <a state="GetPhoneNumber"/>
     </test-case>
 
