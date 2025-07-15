@@ -2,7 +2,9 @@
 
      <test-case id="ChooseCity">
         <q>/start</q>
-        <responseData field="replies[1].buttons">[{text:"Санкт-Петербург",transition:"/ChooseCity/RememberCity"},{text:"Москва",transition:"/ChooseCity/RememberCity"}]</responseData>
+        <a state="/start">"Привет! Я электронный помощник. Помогу вам заказать пиццу!"</a>
+        <a state="/ChooseCity"/>
+        <responseData field="replies[0].buttons">[{text:"Санкт-Петербург",transition:"/ChooseCity/RememberCity"},{text:"Москва",transition:"/ChooseCity/RememberCity"}]</responseData>
         <a state="/ChooseCity"/>
         <q>Спб</q>
         <a state=""/>
