@@ -45,7 +45,7 @@
         <responseData field="replies[3].buttons"> [ {text:"Маленькая на тонком тесте за 199 руб.", callback_data:3} ] </responseData>
         <responseData field="replies[4].buttons"> [ {text:"Маленькая на толстом тесте за 249 руб.", callback_data:4 }] </responseData>
         <request>{type:"query",query:"1",event:"telegramCallbackuery"}</request>
-        <a state="/ChooseQuantity">
+        <a state="/ChooseQuantity"/>
         <responseData field="replies[1].buttons"> [
             {text:"1",transition:"/ChooseQuantity/GetQuantity"},
             {text:"2",transition:"/ChooseQuantity/GetQuantity"},
