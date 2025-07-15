@@ -4,7 +4,7 @@ require: cart.sc
 theme: /
 
     state: Start
-        q!: $regex</start>
+        q!: $regex</Start>
         script:
             $context.session = {};
             $context.client = {};
